@@ -19,6 +19,9 @@ public class CameraDrag : MonoBehaviour
         //MoveCameraViaMouse();
         MoveCameraViaTouch();
         PinchOrPoke();
+        // make note that if we were to listen for touch events and hook them up to a method
+        // it would make sense to run that method in a coroutine.
+
     }
 
     void PinchOrPoke()
@@ -59,6 +62,7 @@ public class CameraDrag : MonoBehaviour
     void MoveCameraViaTouch()
     {
         // need some sort of timer to prevent false positive drags
+        // https://gamedev-resources.com/implementing-touch-with-input-systems-enhanced-touch-api/
         if (Input.touchCount == 1)
         {
             Touch currentTouch = Input.GetTouch(0);
